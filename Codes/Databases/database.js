@@ -8,13 +8,8 @@ todo - install a mongo Db compass
 */
 const { MongoClient } = require("mongodb");
 
-// const url = "mongodb+srv://aman-agrawal02:Agrawal@02DbMongo@amanagrawal.8bfiu.mongodb.net/";   // throws errror "URI must include hostname, domain name, and tld"
-
-// the issue arises that i have @ in the password which is a special character 
-// which mongo used to separate the username from the hostname in the MongoDB URI.
-// To fix this, you need to URL-encode the special characters in your password. In your case, the @ symbol must be replaced with %40.
-const url = "mongodb+srv://aman-agrawal02:Agrawal%4002DbMongo@amanagrawal.8bfiu.mongodb.net/";
-
+// Use placeholders for sensitive information
+const url = "mongodb+srv://<username>:<password>@<hostname>/<database>?retryWrites=true&w=majority";
 
 const client = new MongoClient(url);
 
